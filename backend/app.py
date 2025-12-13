@@ -42,3 +42,9 @@ def image_to_pdf():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
+@app.route("/test-upload", methods=["POST"])
+def test_upload():
+    if "file" not in request.files:
+        return "NO FILE RECEIVED", 400
+    return "FILE RECEIVED OK", 200
