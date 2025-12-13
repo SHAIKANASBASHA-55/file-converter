@@ -1,4 +1,4 @@
-function convert() {
+window.convert = function () {
   const input = document.getElementById("fileInput");
   const status = document.getElementById("status");
 
@@ -24,21 +24,19 @@ function convert() {
 
   callAPI(activeTool, data)
     .then(res => {
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error("API error");
       return activeTool === "split-pdf" ? res.json() : res.blob();
     })
-    .then(result => {
-      if (result instanceof Blob) {
+    .then(out => {
+      if (out instanceof Blob) {
         const a = document.createElement("a");
-        a.href = URL.createObjectURL(result);
+        a.href = URL.createObjectURL(out);
         a.download = "output";
         a.click();
-      } else {
-        alert("Split completed on server");
       }
       status.innerText = "✅ Done!";
     })
     .catch(() => {
       status.innerText = "❌ Failed";
     });
-}
+};
