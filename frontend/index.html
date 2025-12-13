@@ -3,49 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <title>FileForge • Smart File Converter</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/theme.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/theme.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-  <div class="logo">⚡ FileForge</div>
-  <div class="nav-actions">
-    <span>Fast • Secure • Free</span>
-  </div>
-</nav>
-
-<section class="hero">
-  <h1>Convert Files Like a Pro</h1>
-  <p>All-in-one smart file conversion platform</p>
-</section>
-
-<div class="app glass">
-  <aside class="sidebar">
-    <button onclick="selectTool('image-to-pdf')">🖼 Image → PDF</button>
-    <button onclick="selectTool('pdf-to-image')">📄 PDF → Image</button>
-    <button onclick="selectTool('pdf-to-excel')">📊 PDF → Excel</button>
-    <button onclick="selectTool('merge-pdf')">📎 Merge PDFs</button>
-    <button onclick="selectTool('split-pdf')">✂️ Split PDF</button>
-  </aside>
-
-  <main class="content">
-    <h2 id="toolTitle">Choose a Tool</h2>
-
-    <div class="dropzone glass">
-      <p>Drag & drop files here</p>
-      <span>or</span>
-      <button onclick="openPicker()">Browse Files</button>
-      <input type="file" id="fileInput" multiple hidden>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">⚡ FileForge</div>
+    <div class="nav-actions">
+      <span>Fast • Secure • Free</span>
     </div>
+  </nav>
 
-    <button class="primary" onclick="convert()">Convert Now</button>
-    <p id="status"></p>
-  </main>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Convert Files Like a Pro</h1>
+    <p>All-in-one smart file conversion platform</p>
+  </section>
+
+  <!-- APP -->
+  <div class="app glass">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <button onclick="selectTool('image-to-pdf')">🖼 Image → PDF</button>
+      <button onclick="selectTool('pdf-to-image')">📄 PDF → Image</button>
+      <button onclick="selectTool('pdf-to-excel')">📊 PDF → Excel</button>
+      <button onclick="selectTool('merge-pdf')">📎 Merge PDFs</button>
+      <button onclick="selectTool('split-pdf')">✂️ Split PDF</button>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+      <h2 id="toolTitle">Choose a Tool</h2>
+
+      <!-- DROPZONE -->
+      <div class="dropzone glass" id="dropzone">
+        <p>Drag & drop files here</p>
+        <span>or</span>
+        <button type="button" onclick="openPicker()">Browse Files</button>
+        <input type="file" id="fileInput" multiple hidden>
+      </div>
+
+      <!-- ACTION -->
+      <button class="primary" onclick="convert()">Convert Now</button>
+
+      <!-- STATUS -->
+      <p id="status"></p>
+    </main>
+
+  </div>
+
+  <!-- JAVASCRIPT (⚠️ DO NOT REMOVE / CHANGE ORDER) -->
+  <script src="./js/config.js"></script>
+  <script src="./js/state.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/app.js"></script>
 
 </body>
-
 </html>
