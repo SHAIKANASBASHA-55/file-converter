@@ -1,0 +1,4 @@
+flask
+flask-cors
+img2pdf
+pillow
