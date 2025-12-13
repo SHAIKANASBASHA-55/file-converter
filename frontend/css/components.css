@@ -1,0 +1,26 @@
+.dropzone {
+  border: 2px dashed rgba(255,255,255,0.3);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.primary {
+  background: var(--accent);
+  color: black;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 14px;
+}
