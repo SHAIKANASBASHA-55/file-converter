@@ -1,26 +1,40 @@
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+}
+
 .dropzone {
-  border: 2px dashed rgba(255,255,255,0.3);
-  padding: 40px;
-  border-radius: 20px;
+  padding: 50px;
+  border-radius: 22px;
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
+  transition: all 0.3s ease;
+}
+
+.dropzone:hover {
+  transform: translateY(-4px);
 }
 
 .primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: black;
   border: none;
-  padding: 14px 24px;
-  border-radius: 14px;
-  font-weight: bold;
+  padding: 16px 30px;
+  border-radius: 16px;
+  font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .primary:hover {
-  opacity: 0.9;
+  transform: scale(1.05);
 }
 
 #status {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 16px;
+  opacity: 0.8;
+}
+.dropzone.active {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
 }

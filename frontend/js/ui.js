@@ -1,9 +1,8 @@
-function selectTool(tool) {
-  activeTool = tool;
-  document.getElementById("toolTitle").innerText =
-    tool.replace(/-/g, " ").toUpperCase();
-}
+document.addEventListener("dragover", e => {
+  e.preventDefault();
+  document.querySelector(".dropzone").classList.add("active");
+});
 
-function openPicker() {
-  document.getElementById("fileInput").click();
-}
+document.addEventListener("dragleave", () => {
+  document.querySelector(".dropzone").classList.remove("active");
+});
