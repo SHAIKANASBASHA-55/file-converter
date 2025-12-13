@@ -1,4 +1,4 @@
-const API_URL = "https://file-converter-1-3unp.onrender.com";
+const API_URL = "https://file-converter-y6u2.onrender.com/test-upload";
 
 function convert(){
     const file = document.getElementById("fileInput").files[0];
