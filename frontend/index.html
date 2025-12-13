@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>File Converter</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>File Converter</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="card">
-        <h1>⚡ File Converter</h1>
-        <p>Image → PDF (more coming soon)</p>
+<header>
+  <h1>⚡ File Converter</h1>
+  <p>Fast • Free • Online</p>
+</header>
 
-        <input type="file" id="fileInput" />
-        <button onclick="convert()">Convert to PDF</button>
+<main class="grid">
+  <div class="tool" onclick="selectTool('image-to-pdf')">🖼 Image → PDF</div>
+  <div class="tool" onclick="selectTool('pdf-to-image')">📄 PDF → Image</div>
+  <div class="tool" onclick="selectTool('pdf-to-excel')">📊 PDF → Excel</div>
+  <div class="tool" onclick="selectTool('merge-pdf')">📎 Merge PDFs</div>
+  <div class="tool" onclick="selectTool('split-pdf')">✂️ Split PDF</div>
+</main>
 
-        <p id="status"></p>
-    </div>
-</div>
+<section id="panel" class="panel hidden">
+  <h2 id="toolTitle"></h2>
+  <input type="file" id="fileInput" multiple>
+  <button onclick="convert()">Convert</button>
+  <p id="status"></p>
+</section>
 
-<script src="script.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
