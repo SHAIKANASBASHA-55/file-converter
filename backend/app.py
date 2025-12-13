@@ -1,50 +1,62 @@
-from flask import Flask, request, send_file, abort
+from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
-import img2pdf, os, uuid
+from utils.file_handler import new_file
+from converters.image_to_pdf import image_to_pdf
+from converters.pdf_to_image import pdf_to_images
+from converters.pdf_to_excel import pdf_to_excel
+from converters.merge_pdf import merge_pdfs
+from converters.split_pdf import split_pdf
+import os
 
 app = Flask(__name__)
 CORS(app)
-
-UPLOAD = "uploads"
-OUTPUT = "outputs"
-os.makedirs(UPLOAD, exist_ok=True)
-os.makedirs(OUTPUT, exist_ok=True)
 
 @app.route("/")
 def home():
     return "File Converter API is running"
 
 @app.route("/image-to-pdf", methods=["POST"])
-def image_to_pdf():
-    if "file" not in request.files:
-        abort(400, "No file uploaded")
+def img2pdf_api():
+    f = request.files["file"]
+    path = new_file(".img")
+    f.save(path)
+    return send_file(image_to_pdf(path), as_attachment=True)
 
-    file = request.files["file"]
-    uid = str(uuid.uuid4())
+@app.route("/pdf-to-image", methods=["POST"])
+def pdf2img_api():
+    f = request.files["file"]
+    path = new_file(".pdf")
+    f.save(path)
+    images = pdf_to_images(path)
+    return send_file(images[0], as_attachment=True)
 
-    input_path = os.path.join(UPLOAD, uid + "_" + file.filename)
-    output_path = os.path.join(OUTPUT, uid + ".pdf")
+@app.route("/pdf-to-excel", methods=["POST"])
+def pdf2excel_api():
+    f = request.files["file"]
+    path = new_file(".pdf")
+    f.save(path)
+    return send_file(pdf_to_excel(path), as_attachment=True)
 
-    file.save(input_path)
+@app.route("/merge-pdf", methods=["POST"])
+def merge_api():
+    files = request.files.getlist("files")
+    paths = []
+    for f in files:
+        p = new_file(".pdf")
+        f.save(p)
+        paths.append(p)
 
-    try:
-        with open(output_path, "wb") as f:
-            f.write(img2pdf.convert(input_path))
-    except Exception as e:
-        abort(500, str(e))
+    out = new_file(".pdf")
+    merge_pdfs(paths, out)
+    return send_file(out, as_attachment=True)
 
-    return send_file(
-        output_path,
-        mimetype="application/pdf",
-        as_attachment=True,
-        download_name="converted.pdf"
-    )
+@app.route("/split-pdf", methods=["POST"])
+def split_api():
+    f = request.files["file"]
+    path = new_file(".pdf")
+    f.save(path)
+    parts = split_pdf(path)
+    return jsonify(parts)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
-
-@app.route("/test-upload", methods=["POST"])
-def test_upload():
-    if "file" not in request.files:
-        return "NO FILE RECEIVED", 400
-    return "FILE RECEIVED OK", 200

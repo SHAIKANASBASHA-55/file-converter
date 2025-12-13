@@ -2,3 +2,8 @@ flask
 flask-cors
 img2pdf
 pillow
+pdf2image
+pdfplumber
+pandas
+openpyxl
+PyPDF2
