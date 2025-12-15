@@ -1,8 +1,27 @@
-:root {
-  --bg1: #0f172a;
-  --bg2: #020617;
-  --primary: #6366f1;
-  --accent: #22d3ee;
-  --glass: rgba(255,255,255,0.08);
-  --border: rgba(255,255,255,0.15);
+/* Gradient for TARK logo */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #007aff, #00c8ff); /* Blue to cyan */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary button gradient */
+.primary {
+  background: linear-gradient(135deg, #007aff, #00c8ff);
+  color: white !important;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 122, 255, 0.35);
 }

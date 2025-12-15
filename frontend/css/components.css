@@ -1,40 +1,53 @@
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
+.sidebar button {
+  width: 100%;
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sidebar button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  border-color: #007aff;
 }
 
 .dropzone {
-  padding: 50px;
-  border-radius: 22px;
-  text-align: center;
-  margin: 30px 0;
-  transition: all 0.3s ease;
+  background: white;
+  border: 3px dashed #007aff;
+  border-radius: 24px;
+  padding: 5rem 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
 
-.dropzone:hover {
-  transform: translateY(-4px);
+.dropzone p {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
 }
 
-.primary {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: black;
+.dropzone span {
+  display: block;
+  margin: 1rem 0;
+  color: #8e8e93;
+}
+
+.dropzone button {
+  background: transparent;
+  color: #007aff;
   border: none;
-  padding: 16px 30px;
-  border-radius: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  font-size: 1.2rem;
+  text-decoration: underline;
 }
 
-.primary:hover {
-  transform: scale(1.05);
-}
-
-#status {
-  margin-top: 16px;
-  opacity: 0.8;
-}
-.dropzone.active {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+/* Remove heavy glass if you want pure minimalist (or keep subtle) */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
