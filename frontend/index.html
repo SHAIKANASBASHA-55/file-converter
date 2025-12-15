@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <title>TARK • Smart File Converter</title>
 
-  <!-- Favicon: Gradient Lightning Logo (download one from below and put in your root or /images) -->
+  <!-- Favicon -->
   <link rel="icon" href="./images/favicon.png" type="image/png">
-  <!-- Example: save as images/favicon.png (32x32 or 64x64 recommended) -->
 
-  <!-- Google Fonts for sharp, Apple-like typography (optional but recommended) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Your CSS files (we'll update these separately) -->
+  <!-- Your separate CSS files -->
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/components.css">
@@ -28,14 +27,8 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Convert Files Like a Pro</h1>
-    <p>All-in-one smart file conversion platform</p>
-  </section>
-
   <!-- APP -->
-  <div class="app glass">
+  <div class="app">
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
@@ -47,32 +40,30 @@
     </aside>
 
     <!-- CONTENT -->
-    <!-- CONTENT -->
-<main class="content">
-  <h2 id="toolTitle">Choose a Tool</h2>
+    <main class="content">
+      <h2 id="toolTitle">Choose a Tool</h2>
 
-  <!-- DROPZONE -->
-  <div class="dropzone glass" id="dropzone">
-    <p>Drag & drop files here</p>
-    <span>or</span>
-    <button type="button" onclick="openPicker()">Browse Files</button>
-    <input type="file" id="fileInput" multiple hidden>
-  </div>
+      <!-- BIG BLUE DROPZONE like Smallpdf -->
+      <div class="dropzone big-blue glass" id="dropzone">
+        <div class="upload-icon">📄</div>
+        <button class="choose-btn" type="button" onclick="openPicker()">CHOOSE FILES</button>
+        <p class="drop-text">or drop files here</p>
+        <input type="file" id="fileInput" multiple hidden>
+      </div>
 
-  <!-- NEW: File List Preview -->
-  <!-- File List Preview -->
-<div id="fileList" class="file-list"></div>
+      <!-- FILE LIST -->
+      <div id="fileList" class="file-list"></div>
 
-  <!-- ACTION -->
-  <button class="primary" onclick="convert()">Convert Now</button>
+      <!-- CONVERT BUTTON -->
+      <button class="primary big-convert" onclick="convert()">Convert Now</button>
 
-  <!-- STATUS -->
-  <p id="status"></p>
-</main>
+      <!-- STATUS -->
+      <p id="status"></p>
+    </main>
 
   </div>
 
-  <!-- JAVASCRIPT (DO NOT CHANGE ORDER) -->
+  <!-- JAVASCRIPT (unchanged order) -->
   <script src="./js/config.js"></script>
   <script src="./js/state.js"></script>
   <script src="./js/api.js"></script>

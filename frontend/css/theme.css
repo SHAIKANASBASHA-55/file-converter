@@ -25,3 +25,74 @@
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0, 122, 255, 0.35);
 }
+/* Big blue dropzone - classic Smallpdf */
+.dropzone.big-blue {
+  background: #3079ed;
+  color: white;
+  max-width: 800px;
+  width: 100%;
+  padding: 6rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(48,121,237,0.3);
+  transition: background 0.3s;
+}
+
+.dropzone.big-blue:hover {
+  background: #2569dd;
+}
+
+.dropzone.big-blue.active {
+  background: #1e5bc8;
+}
+
+.upload-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.choose-btn {
+  background: white;
+  color: #3079ed;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 1.5rem 0 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.choose-btn:hover {
+  transform: translateY(-2px);
+}
+
+.drop-text {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+/* File list stays hidden until files added */
+.file-list {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 3rem 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Big red convert button (classic Smallpdf) */
+.primary.big-convert {
+  background: #ff3b30;
+  margin-top: 2rem;
+  padding: 1.2rem 4rem;
+  font-size: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(255,59,48,0.3);
+}
+
+.primary.big-convert:hover {
+  background: #e6332a;
+}

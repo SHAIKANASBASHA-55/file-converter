@@ -49,3 +49,27 @@
   margin-bottom: 2.5rem;
   color: #1d1d1f;
 }
+body {
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.app {
+  display: flex;
+  min-height: calc(100vh - 80px); /* Adjust if navbar height changes */
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#toolTitle {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
