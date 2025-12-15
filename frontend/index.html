@@ -47,23 +47,28 @@
     </aside>
 
     <!-- CONTENT -->
-    <main class="content">
-      <h2 id="toolTitle">Choose a Tool</h2>
+    <!-- CONTENT -->
+<main class="content">
+  <h2 id="toolTitle">Choose a Tool</h2>
 
-      <!-- DROPZONE -->
-      <div class="dropzone glass" id="dropzone">
-        <p>Drag & drop files here</p>
-        <span>or</span>
-        <button type="button" onclick="openPicker()">Browse Files</button>
-        <input type="file" id="fileInput" multiple hidden>
-      </div>
+  <!-- DROPZONE -->
+  <div class="dropzone glass" id="dropzone">
+    <p>Drag & drop files here</p>
+    <span>or</span>
+    <button type="button" onclick="openPicker()">Browse Files</button>
+    <input type="file" id="fileInput" multiple hidden>
+  </div>
 
-      <!-- ACTION -->
-      <button class="primary" onclick="convert()">Convert Now</button>
+  <!-- NEW: File List Preview -->
+  <!-- File List Preview -->
+<div id="fileList" class="file-list"></div>
 
-      <!-- STATUS -->
-      <p id="status"></p>
-    </main>
+  <!-- ACTION -->
+  <button class="primary" onclick="convert()">Convert Now</button>
+
+  <!-- STATUS -->
+  <p id="status"></p>
+</main>
 
   </div>
 
